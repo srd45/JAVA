@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class HelloWorld{
+
+     public static void main(String []args){
+        Scanner sc = new Scanner(System.in);
+        int A,B,C;
+        char ch;
+        System.out.print("Enter the two numbers\nA:\t");
+        A = sc.nextInt();
+        System.out.print("B:\t");
+        B = sc.nextInt();
+        System.out.println("Enter the operation");
+        System.out.println("a-addition   s-subtraction   m-multiplication   d-division");
+        ch = sc.next().charAt(0);
+        switch(ch){
+            case'a':
+                C=A+B;
+                System.out.println(A+"+"+B+"="+C);
+                break;
+            case's':
+                C=A-B;
+                System.out.println(A+"-"+B+"="+C);
+                break;
+            case'm':
+                C=A*B;
+                System.out.println(A+"*"+B+"="+C);
+                break;
+            case'd':
+                C=A/B;
+                System.out.println(A+"/"+B+"="+C);
+                break;
+            default:
+                System.out.println("Invalid operation");
+                break;
+        
+     
+            
+                
+        }
+     }
+}
