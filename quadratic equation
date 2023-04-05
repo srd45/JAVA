@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class HelloWorld{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double a,b,c,d;
+        System.out.println("Enter the roots of the equation");
+        System.out.print("A:\t");
+        a = sc.nextDouble();
+        System.out.print("B:\t");
+        b = sc.nextDouble();
+        System.out.print("C:\t");
+        c= sc.nextDouble();
+        d = (b*b)-(4*a*c);
+        
+        if(d>0){
+            System.out.println("The roots are real and distinct");
+            double r1 = (-b+Math.sqrt(d))/(2*a);
+            double r2 = (-b-Math.sqrt(d))/(2*a);
+            System.out.println("Root1 = "+r1+"\tRoot2 = "+r2);
+        }
+        else if(d==0){
+            System.out.println("The roots are real and equal");
+            double r1 = -b/(2*a);
+            System.out.println("Root1 = "+r1+"\tRoot2 = "+r1);
+            
+            
+        }
+        else{
+            System.out.println("The roots are imaginary.");
+            double imaginary = Math.sqrt(-d)/(2*a);
+            double r1 = -b/(2*a);
+            double root1 = r1+imaginary;
+            double root2 = r1-imaginary;
+            System.out.println("Root1 = "+root1+"\tRoot2 = "+root2);
+        }
+    }
+}
