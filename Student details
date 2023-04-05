@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+class Student{
+    private String usn,name,branch,ph;
+    
+    public void accept(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the Student Details");
+        System.out.println("Enter the USN:\n");
+        usn = scan.next();
+        System.out.println("Enter the NAME:\n");
+        name = scan.next();
+         System.out.println("Enter the BRANCH:\n");
+        branch = scan.next();
+         System.out.println("Enter the PHONE NUMBER:\n");
+        ph = scan.next();
+        
+    }
+    
+    public void display(){
+        System.out.println("\n");
+        System.out.println("Student Details");
+        System.out.println("USN:"+usn);
+        System.out.println("NAME:"+name);
+        System.out.println("BRANCH:"+branch);
+        System.out.println("PHONE NUMBER:"+ph);
+        
+    }
+}
+public class HelloWorld{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of Students:");
+        int n = sc.nextInt();
+        Student[] ob = new Student[n];
+        for(int i=0; i<n; i++){
+            ob[i] = new Student();
+            ob[i].accept();
+            
+            
+        }
+        for(int i=0; i<n; i++){
+            ob[i].display();
+            
+        }
+     }
+}
