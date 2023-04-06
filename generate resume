@@ -1,0 +1,42 @@
+interface resume{
+    void biodata();
+}
+
+class teacher implements resume{
+    public void biodata(){
+        String name = "Shankar";
+        String qualifications = "MTech";
+        Float experience = 9.8f;
+        String achievements = "4 national awards";
+        
+        System.out.println(name);
+        System.out.println(qualifications);
+        System.out.println(experience);
+        System.out.println(achievements);
+    }
+    }
+    
+class student implements resume{
+    public void biodata(){
+        String name = "Surya";
+        String qualifications = "BE";
+        int semester = '3';
+        String achievements = "2nd rank in JAVA";
+        
+        System.out.println(name);
+        System.out.println(qualifications);
+        System.out.println(semester);
+        System.out.println(achievements);
+    }
+}
+
+public class HelloWorld{
+    public static void main(String[] args){
+        System.out.println("teacher interface is called");
+        teacher tobj = new teacher();
+        tobj.biodata();
+        System.out.println();
+        student sobj = new student();
+        sobj.biodata();
+    }
+}
