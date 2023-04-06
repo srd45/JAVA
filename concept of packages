@@ -1,0 +1,207 @@
+package currencyconversion;
+import java.util.*;
+
+public class Currency{
+    public static void main(String[] args){
+        double inr,usd,yen,euro;
+        Scanner sc = new Scanner(System.in);
+        
+        public void inrtousd(){
+            System.out.println("Enter the amount in INR:");
+            inr = sc.nextDouble();
+            usd = inr/82.6;
+            System.out.println("INR: "+inr+"\nUSD: "+usd);
+        }
+        public void usdtoinr(){
+            System.out.println("Enter the amount in USD:");
+            usd = sc.nextDouble();
+            inr = usd*82.6;
+            System.out.println("USD: "+usd+"\nINR: "+inr);
+        }
+        public void inrtoyen(){
+            System.out.println("Enter the amount in INR:");
+            inr = sc.nextDouble();
+            yen = inr/0.6;
+            System.out.println("INR: "+inr+"\nYEN: "+yen);
+        }
+        public void yentoinr(){
+            System.out.println("Enter the amount in YEN:");
+            yen = sc.nextDouble();
+            inr = yen*0.6;
+            System.out.println("YEN: "+yen+"\nINR: "+inr);
+        }
+        public void inrtoeuro(){
+            System.out.println("Enter the amount in INR:");
+            inr = sc.nextDouble();
+            euro = inr/87.3;
+            System.out.println("INR: "+inr+"\nEURO: "+euro);
+        }
+        public void eurotoinr(){
+            System.out.println("Enter the amount in EURO:");
+            euro = sc.nextDouble();
+            inr = euro/87.3;
+            System.out.println("EURO: "+euro+"\nINR: "+inr);
+        }
+        
+    }
+}
+
+package distanceconversion;
+import java.util.*;
+public class distance{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        double km,m,miles;
+        
+        public void kmtom(){
+            System.out.println("Enter the distance in km:");
+            km = sc.nextDouble();
+            m = km*1000;
+            System.out.println("km: "+km+"\nm: "+m);
+        }
+        
+        public void mtokm(){
+            System.out.println("Enter the distance in m:");
+            m = sc.nextDouble();
+            km = m/1000;
+            System.out.println("m: "+m+"\nkm: "+km);
+        }
+        
+        public void kmtomiles(){
+            System.out.println("Enter the distance in km:");
+            km = sc.nextDouble();
+            miles = km/1.60934;
+            System.out.println("km: "+km+"\nmiles: "+miles);
+        }
+        
+        public void milestokm(){
+            System.out.println("Enter the distance in miles:");
+            miles = sc.nextDouble();
+            km = miles*1.60934;
+            System.out.println("miles: "+miles+"\nkm: "+km);
+        }
+       
+    }
+}
+
+package timeconversion;
+import java.util.*;
+
+public class timer{
+    public static void main(String[] args){
+        int seconds, minutes, hours,input;
+        Scanner sc = new Scanner();
+        
+        public void secondstohours(){
+            System.out.println("Enter the time in seconds: ");
+            seconds = sc.nextInt();
+            hours = seconds/3600;
+            System.out.println("Hours: "+hours);
+            System.out.println("Seconds: "+seconds);
+        }
+        public void hourstoseconds(){
+            System.out.println("Enter the time in hours: ");
+            hours = sc.nextInt();
+            seconds = hours*3600;
+            System.out.println("Hours: "+hours);
+            System.out.println("Seconds: "+seconds);
+        }
+        
+        public void minutestohours(){
+            System.out.println("Enter the time in minutes: ");
+            minutes = sc.nextInt();
+            hours = minutes/60;
+            System.out.println("Minutes: "+minutes);
+            System.out.println("Hours: "+hours);
+        }
+        public void hourstominutes(){
+            System.out.println("Enter the time in hours: ");
+            hours = sc.nextInt();
+            minutes = hours*60;
+            System.out.println("Hours: "+hours);
+            System.out.println("Minutes: "+minutes);
+        }
+    }
+}
+
+package conversion;
+import java.util.*;
+import java.io.*;
+import currencyconversion.*;
+import distanceconversion.*;
+import timeconversion.*;
+
+public class Conversion{
+    public static void main(String[] args){
+        int ch, choice;
+        Scanner s = new Scanner(System.in);
+        Currency c = new Currency();
+        distance d = new distance();
+        timer t = new timer();
+        do{
+            System.out.println("1. dollar to rupee");
+            System.out.println("2. rupee to dollar");
+            System.out.println("3. euro to rupee");
+            System.out.println("4. rupee to euro");
+            System.out.println("5. yen to rupee");
+            System.out.println("6. rupee to yen");
+            System.out.println("7. meter to kilometer");
+            System.out.println("8. kilometer to meter");
+            System.out.println("9. miles to kilometer");
+            System.out.println("10. kilometer to miles");
+            System.out.println("11. hours to seconds");
+            System.out.println("12. seconds to hours");
+            System.out.println("13. minutes to hours");
+            System.out.println("14. hours to minutes");
+            System.out.println("Enter your choice: ");
+            choice = sc.nextInt();
+            switch(choice){
+                case 1:
+                    c.usdtoinr();
+                    break;
+                case 2:
+                    c.inrtousd();
+                    break;
+                case 3:
+                    c.eurotoinr();
+                    break;
+                case 4:
+                    c.inrtoeuro();
+                    break;
+                case 5:
+                    c.yentoinr();
+                    break;
+                case 6:
+                    c.inrtoyen();
+                    break;
+                case 7:
+                    d.mtokm();
+                    break;
+                case 8:
+                    d.kmtom();
+                    break;
+                case 9:
+                    d.milestokm()
+                    break;
+                case 10:
+                    d.kmtomiles()
+                    break;
+                case 11:
+                    d.hourstoseconds();
+                    break;
+                case 12:
+                    t.secondstohours();
+                    break;
+                case 13:
+                    t.minutestohours();
+                    break;
+                case 14:
+                    t.hourstominutes();
+                    break;
+            }
+            System.out.println("Enter 0 to quit and 1 ro continue: ");
+            sc = s.nextInt();
+        }while(ch==1);
+        
+    }
+}
